@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ======== LINK PREVIEW: the browser tab, Google, and what Discord shows when someone posts scrambledvr.com ======== -->
+<title>SCRAMBLED | Multiplayer VR egg game for Meta Quest</title>
+<meta name="description" content="A multiplayer VR game for Meta Quest where everyone's an egg. Swing your arms to run, climb and jump around with your friends.">
+<meta property="og:title" content="SCRAMBLED">
+<meta property="og:description" content="A multiplayer VR game for Meta Quest where everyone's an egg.">
+<!-- ================================================================================================================== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scrambledvr.com/">
+<meta property="og:image" content="https://scrambledvr.com/images/share.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1020">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&amp;display=swap">
+<link rel="preload" href="fonts/ScrambledLED.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="content.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="backdrop" aria-hidden="true">
+  <canvas id="bg-leds"></canvas>
+  <div class="led-mask"></div>
+  <video id="bg-video" muted loop playsinline preload="auto"></video>
+  <div class="scrim"></div>
+</div>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-row">
+    <a class="brand" href="#top" data-text="title">SCRAMBLED</a>
+    <nav class="topbar-links" aria-label="Community">
+      <a data-href="discord" target="_blank" rel="noopener" data-text="discordName"></a>
+      <a data-href="youtube" target="_blank" rel="noopener" data-text="youtubeName"></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1 class="sign"><span data-text="title">SCRAMBLED</span></h1>
+      <p class="tagline" data-text="tagline"></p>
+      <div class="key-row">
+        <button class="key key-lit" type="button" data-open-trailer><span class="play" aria-hidden="true"></span><span data-text="watchTrailer"></span></button>
+        <a class="key" data-store></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band modes-band" id="modes">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="led-title" data-text="modesTitle"></h2>
+        <p data-text="modesText"></p>
+      </div>
+      <div class="terminal">
+        <div class="mode-keys" id="mode-keys" role="tablist" aria-label="Modes"></div>
+        <div class="mode-stage" id="mode-stage" role="tabpanel">
+          <div class="mode-screen"><img id="mode-img" alt="" width="480" height="300"></div>
+          <div class="mode-info">
+            <h3 class="mode-name" id="mode-name"></h3>
+            <p class="mode-text" id="mode-text"></p>
+            <p class="mode-wearing"><span data-text="wearingLabel"></span> <span id="mode-wearing"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band shelf-band" id="wardrobe">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="led-title" data-text="wardrobeTitle"></h2>
+        <p data-text="wardrobeText"></p>
+      </div>
+      <div class="shelf" id="shelf"></div>
+    </div>
+  </section>
+
+  <section class="band shots-band" id="screenshots" hidden>
+    <div class="wrap band-head">
+      <h2 class="led-title" data-text="screenshotsTitle"></h2>
+    </div>
+    <div class="shots" id="shots"></div>
+  </section>
+
+  <section class="window" aria-labelledby="trailer-title">
+    <div class="wrap">
+      <h2 class="sign sign-small" id="trailer-title"><span data-text="trailerTitle"></span></h2>
+      <div class="key-row">
+        <button class="key key-lit" type="button" data-open-trailer><span class="play" aria-hidden="true"></span><span data-text="watchWithSound"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="band boards-band" id="community">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="led-title" data-text="communityTitle"></h2>
+      </div>
+      <div class="boards">
+        <div class="board board-discord">
+          <p class="board-name" data-text="discordName"></p>
+          <p class="board-text" data-text="discordText"></p>
+          <a class="key key-lit" data-href="discord" target="_blank" rel="noopener" data-text="discordButton"></a>
+        </div>
+        <div class="board board-youtube">
+          <p class="board-name" data-text="youtubeName"></p>
+          <p class="board-text" data-text="youtubeText"></p>
+          <a class="key key-lit" data-href="youtube" target="_blank" rel="noopener" data-text="youtubeButton"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <div class="footer-brand">
+      <a class="brand" href="#top" data-text="title">SCRAMBLED</a>
+      <p data-text="footerTagline"></p>
+    </div>
+    <div class="footer-links">
+      <a class="key key-small" data-store></a>
+      <a data-href="discord" target="_blank" rel="noopener" data-text="discordName"></a>
+      <a data-href="youtube" target="_blank" rel="noopener" data-text="youtubeName"></a>
+    </div>
+  </div>
+  <div class="wrap fine-print">
+    <p>&copy; <span id="year">2026</span> <span data-text="title">SCRAMBLED</span>. <span data-text="footerNote"></span></p>
+  </div>
+</footer>
+
+<dialog id="trailer-dialog" aria-label="Trailer">
+  <button class="dialog-close" id="trailer-close" type="button" aria-label="Close">X</button>
+  <video id="trailer-video" controls playsinline preload="none"></video>
+  <p class="dialog-missing" data-text="trailerMissing"></p>
+</dialog>
+
+</body>
+</html>
