@@ -12,11 +12,10 @@
 window.SITE = {
 
   // ---------- LINKS ----------
-  discord:   `https://discord.gg/r4uytzF48Z`,
+  discord:   `https://discord.gg/mHBrskRe2e`,
   youtube:   `https://www.youtube.com/@Scrambled-Vr-Official`,
-  // Paste the Meta Horizon Store link between the ` marks when the game is up.
-  // While it's empty, the store buttons say "coming soon".
-  metaStore: ``,
+  // The Meta Horizon Store link. Empty it (two ` marks with nothing between) and the store buttons say "coming soon".
+  metaStore: `https://www.meta.com/experiences/scrambled/1399540486567746/`,
 
   // The trailer: plays muted behind the top of the page, and with sound from the WATCH buttons.
   trailer:       `video/trailer.mp4`,
